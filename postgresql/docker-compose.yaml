@@ -1,24 +1,19 @@
-version: "3"
-#Debezium PSQL and adminer (DBMS)
-services:
-  postgres_db:
-    container_name: postgres_db
-    image: postgres:11.7-alpine
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
+version: '3.7'
+
+services: 
+  postgres:
+    container_name: DB_postgres_12
+    image: "postgres:12"
+    environment: 
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "root"
+      PGDATA: "/data/postgres"
+    volumes: 
+      - postgres_vol:/data/postgres
     ports:
-      - 5432:5432
-    volumes:
-      - postgres_data_db:/var/lib/postgresql/data
-    networks:
-      - dev_net
+      - "15432:5432"
+    restart: always
+    network_mode: bridge
 
-volumes:
-  postgres_data_db:
-
-networks:
-  dev_net:
-    external:
-      name: dev_network
+volumes: 
+  postgres_vol:
