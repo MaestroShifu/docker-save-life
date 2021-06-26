@@ -11,7 +11,7 @@ services:
     volumes: 
       - postgres_vol:/data/postgres
     ports:
-      - "15432:5432"
+      - "5432:5432"
     restart: always
     network_mode: bridge
 
