@@ -1,21 +1,15 @@
-# docker-compose.yml
-version: '3'
+version: '3.7'
+
 services:
   redis:
-    container_name: redis 
-    image: redis:5.0.10-alpine # use latest official postgres version
-    restart: always
+    container_name: Redis_5 
+    image: redis:6-alpine
     volumes:
-      - redis_vol:/data # persist data even if container shuts down
+      - redis_vol:/data
     ports: 
       - 6379:6379
-    networks:
-      - dev_net
+    restart: always
+    network_mode: bridge
 
 volumes:
   redis_vol:
-
-networks:
-  dev_net:
-    external:
-      name: dev_network
