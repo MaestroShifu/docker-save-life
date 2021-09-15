@@ -19,6 +19,8 @@ services:
       - 8081:8081
     links:
       - mongo:mongo
+    depends_on:
+      - mongo
     environment:
       ME_CONFIG_MONGODB_SERVER: 'mongo'
       ME_CONFIG_BASICAUTH_USERNAME: 'admin'
