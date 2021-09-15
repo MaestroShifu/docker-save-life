@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
   redis:
-    container_name: Redis_5 
     image: redis:6-alpine
     volumes:
       - redis_vol:/data
