@@ -3,6 +3,8 @@ version: '3.7'
 services:
   redis:
     image: redis:6-alpine
+    container_name: redis_container
+    hostname: redis_host
     volumes:
       - redis_vol:/data
     ports: 
@@ -16,3 +18,5 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge

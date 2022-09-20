@@ -3,6 +3,8 @@ version: '3.7'
 services:
   rabbitmq:
     # image: rabbitmq:3-management-alpine
+    container_name: rabbitmq_container
+    hostname: rabbitmq_host
     build: # 
       context: '.'
       dockerfile: Dockerfile
@@ -24,6 +26,8 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge
 
 # User: guest
 # Password: guest

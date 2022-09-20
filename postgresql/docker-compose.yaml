@@ -2,6 +2,8 @@ version: '3.7'
 
 services: 
   postgres:
+    container_name: postgres_container
+    hostname: postgres_host
     image: "postgres:12"
     environment: 
       POSTGRES_USER: "postgres"
@@ -12,7 +14,7 @@ services:
     ports:
       - "5432:5432"
     restart: always
-    network_mode: bridge
+    # network_mode: bridge
     networks:
       - container_net
 
@@ -21,3 +23,5 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge

@@ -2,6 +2,8 @@ version: '3.7'
 services:
   mysql:
     image: mysql:8.0
+    container_name: mysql_container
+    hostname: mysql_host
     restart: always
     network_mode: bridge
     environment:
@@ -26,5 +28,7 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge
 
 # How to use dbever error conecction is with driver, you solution is https://ganeshchandrasekaran.com/dbeaver-public-key-retrieval-is-not-allowed-77eba055bbcd

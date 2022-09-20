@@ -3,7 +3,8 @@ version: '3.9'
 services:
   mssql:
     image: mcr.microsoft.com/azure-sql-edge:latest
-    container_name: mssql
+    container_name: mssql_container
+    hostname: mssql_host
     volumes:
       - events_mssql:/var/opt/mssql
     ports:
@@ -23,3 +24,5 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge

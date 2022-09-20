@@ -3,6 +3,8 @@ version: '3.8'
 services: 
   mongo:
     image: 'mongo'
+    container_name: mongo_container
+    hostname: mongo_host
     environment: 
       MONGO_INITDB_ROOT_USERNAME: 'admin'
       MONGO_INITDB_ROOT_PASSWORD: 'root'
@@ -37,3 +39,5 @@ volumes:
 
 networks:
   container_net:
+    name: container_net
+    driver: bridge
