@@ -15,10 +15,15 @@ services:
       - rabbitmq_log:/var/log/rabbitmq
     restart: always
     network_mode: bridge
+    networks:
+      - container_net
 
 volumes:
   rabbitmq_data:
   rabbitmq_log:
+
+networks:
+  container_net:
 
 # User: guest
 # Password: guest

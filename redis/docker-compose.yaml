@@ -9,6 +9,10 @@ services:
       - 6379:6379
     restart: always
     network_mode: bridge
-
+    networks:
+      - container_net
 volumes:
   redis_vol:
+
+networks:
+  container_net:

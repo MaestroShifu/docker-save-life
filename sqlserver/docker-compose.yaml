@@ -16,6 +16,10 @@ services:
       # - MSSQL_USER=admin
       # - MSSQL_PASSWORD=Passw@rd
       # - MSSQL_DB_AUDIT_LOG=events_service_audit_log
-
+    networks:
+      - container_net
 volumes:
   events_mssql:
+
+networks:
+  container_net:

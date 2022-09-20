@@ -29,6 +29,11 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: 'root'
     restart: always
     network_mode: bridge
+    networks:
+      - container_net
 
 volumes: 
   mongo_vol:
+
+networks:
+  container_net:

@@ -18,8 +18,13 @@ services:
       # Where our data will be persisted
     volumes:
       - mysql_vol:/var/lib/mysql
+    networks:
+      - container_net
 # Names our volume
 volumes:
   mysql_vol:
+
+networks:
+  container_net:
 
 # How to use dbever error conecction is with driver, you solution is https://ganeshchandrasekaran.com/dbeaver-public-key-retrieval-is-not-allowed-77eba055bbcd

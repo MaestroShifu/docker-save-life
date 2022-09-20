@@ -13,6 +13,11 @@ services:
       - "5432:5432"
     restart: always
     network_mode: bridge
+    networks:
+      - container_net
 
 volumes: 
   postgres_vol:
+
+networks:
+  container_net:
